@@ -5,6 +5,9 @@ if(andar == true){
 		vspeed = -vel;
 		olhandoParaCima = true;
 		sprite_index = spr_PlayerCM
+		if !audio_is_playing(step){
+			audio_play_sound(step,10, true);
+		}
 		break;
 				
 	case vk_down:
@@ -12,6 +15,10 @@ if(andar == true){
 		vspeed = vel;
 		olhandoParaCima = false;
 		sprite_index = spr_PlayerBX;
+		
+		if !audio_is_playing(step){
+			audio_play_sound(step,10, true);
+		}
 		break;
 		
 	case vk_left:
@@ -20,6 +27,9 @@ if(andar == true){
 		sprite_index = spr_PlayerDR;
 		olhandoParaCima = false;
 		image_xscale = -tam;
+		if !audio_is_playing(step){
+			audio_play_sound(step,10, true);
+		}
 		break;
 		
 	case vk_right:
@@ -28,6 +38,9 @@ if(andar == true){
 		sprite_index = spr_PlayerDR;
 		olhandoParaCima = false;
 		image_xscale = tam;
+		if !audio_is_playing(step){
+			audio_play_sound(step,10, true);
+		}
 		break;
 	
 	case ord("W"):
@@ -38,6 +51,10 @@ if(andar == true){
 		olhandoParaCima = true;
 		sprite_index = spr_PlayerCM
 	}
+	
+		if !audio_is_playing(step){
+			audio_play_sound(step,10, true);
+		}
 		break;
 		
 	case ord("A"):
@@ -49,6 +66,9 @@ if(andar == true){
 		image_xscale = -tam;
 		sprite_index = spr_PlayerDR;
 	}	
+		if !audio_is_playing(step){
+			audio_play_sound(step,10, true);
+		}
 		break;
 	
 	case ord("S"):
@@ -59,6 +79,9 @@ if(andar == true){
 		olhandoParaCima = false;
 		sprite_index = spr_PlayerBX;
 	}	
+		if !audio_is_playing(step){
+			audio_play_sound(step,10, true);
+		}
 		break;
 		
 	case ord("D"):
@@ -70,9 +93,13 @@ if(andar == true){
 		image_xscale = tam;
 		sprite_index = spr_PlayerDR;
 	}	
+		if !audio_is_playing(step){
+			audio_play_sound(step,10, true);
+		}
 		break;
 	
 	default:
+		audio_stop_sound(step);
 		hspeed = 0;
 		vspeed = 0;
 		if (olhandoParaCima){

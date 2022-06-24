@@ -24,3 +24,4 @@ if(keyboard_check_pressed(vk_backspace)){
 if(delete_timer !=2){
 	delete_timer++;	
 }
+
